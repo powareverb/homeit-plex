@@ -20,9 +20,9 @@ services:
 
 volumes:
     plexconfig:
-        driver: cifs
-        driver_opts: 
-            share: "nas-jones/plexmain"
+        # driver: cifs
+        # driver_opts: 
+        #     share: "nas-jones/plexmain"
     plextranscode:
         driver: cifs
         driver_opts: 
