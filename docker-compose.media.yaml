@@ -13,11 +13,34 @@ services:
         env_file: 
             - .env
         volumes:
-            #Volume driver? cifs
-            - nas-jones/plexmain:/config
-            - nas-jones/temp:/transcode
-            - nas-jones/videos:/data/videos
-            - nas-jones/music:/data/music
-            - nas-jones/pictures:/data/pictures
+            - plexconfig:/config
+            - plextranscode:/transcode
+            - plexvideo:/data/videos
+            - plexmusic:/data/music
+            - plexpictures:/data/pictures
 
+volumes:
+    plexconfig:
+        driver: cifs
+        driver_opts: 
+            device: nas-jones/plexmain
 
+    plextranscode:
+        driver: cifs
+        driver_opts: 
+            device: nas-jones/temp
+        
+    plexvideo:
+        driver: cifs
+        driver_opts: 
+            device: nas-jones/videos
+
+    plexmusic:
+        driver: cifs
+        driver_opts: 
+            device: nas-jones/music
+
+    plexpictures:
+        driver: cifs
+        driver_opts: 
+            device: nas-jones/pictures
