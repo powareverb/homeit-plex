@@ -7,10 +7,10 @@ docker volume rm homeitplex_plexpictures
 docker volume rm homeitplex_plexvideo
 docker volume rm homeitplex_plextranscode
 
-#docker volume create -d cifs --name nas-jones/plexmain
+docker volume create -d cifs --name homeitplex_plexmusic -o share=nas-jones/plexmusic
+docker volume create -d cifs --name homeitplex_plexpictures -o share=nas-jones/plexpictures
+docker volume create -d cifs --name homeitplex_plexvideo -o share=nas-jones/plexvideo
 
-docker volume create -d cifs --name homeitplex_plexconfig -o share=nas-jones/plexmain
-#docker run -it -v homeitplex_plexconfig:/media/test ubuntu /bin/bash
 
 
 

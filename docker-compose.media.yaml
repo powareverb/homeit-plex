@@ -16,6 +16,7 @@ services:
             - plexvideo:/data/videos
             - plexmusic:/data/music
             - plexpictures:/data/pictures
+            - plexvidkids:/data/vidkids
 
 volumes:
     plexconfig:
@@ -31,3 +32,7 @@ volumes:
         driver: cifs
         driver_opts: 
             share: "nas-jones/pictures"
+    plexvidkids:
+        driver: cifs
+        driver_opts: 
+            share: "nas-jones/vdeos-kids"
