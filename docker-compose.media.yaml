@@ -19,7 +19,7 @@ services:
             - plexpictures:/data/pictures
 
 volumes:
-     plexconfig:
+    plexconfig:
         driver: cifs
         driver_opts: 
             share: "nas-jones/plexmain"
