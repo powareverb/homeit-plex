@@ -19,28 +19,28 @@ services:
             - plexmusic:/data/music
             - plexpictures:/data/pictures
 
-volumes:
-    plexconfig:
+ volumes:
+     plexconfig:
         driver: cifs
         driver_opts: 
-            device: nas-jones/plexmain
+            share: "nas-jones/plexmain"
 
     plextranscode:
         driver: cifs
         driver_opts: 
-            device: nas-jones/temp
+            share: "nas-jones/temp"
         
     plexvideo:
         driver: cifs
         driver_opts: 
-            device: nas-jones/videos
+            share: "nas-jones/videos"
 
     plexmusic:
         driver: cifs
         driver_opts: 
-            device: nas-jones/music
+            share: "nas-jones/music"
 
     plexpictures:
         driver: cifs
         driver_opts: 
-            device: nas-jones/pictures
+            share: "nas-jones/pictures"
