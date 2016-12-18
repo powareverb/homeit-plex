@@ -18,28 +18,23 @@ services:
             - plexvideo:/data/videos
             - plexmusic:/data/music
             - plexpictures:/data/pictures
-
  volumes:
      plexconfig:
         driver: cifs
         driver_opts: 
             share: "nas-jones/plexmain"
-
     plextranscode:
         driver: cifs
         driver_opts: 
-            share: "nas-jones/temp"
-        
+            share: "nas-jones/temp"   
     plexvideo:
         driver: cifs
         driver_opts: 
             share: "nas-jones/videos"
-
     plexmusic:
         driver: cifs
         driver_opts: 
             share: "nas-jones/music"
-
     plexpictures:
         driver: cifs
         driver_opts: 
