@@ -35,4 +35,4 @@ volumes:
     plexvidkids:
         driver: cifs
         driver_opts: 
-            share: "nas-jones/vdeos-kids"
+            share: "nas-jones/videos-kids"
