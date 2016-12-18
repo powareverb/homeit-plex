@@ -1,0 +1,23 @@
+version: '2'
+services:
+
+    plex-media:
+        image: linuxserver/plex
+        ports:
+            - "1900:1900/udp"    
+            - "5353:5353/udp"    
+            - "32400:32400"    
+            - "32400:32400/udp"    
+            - "32469:32469"    
+            - "32469:32469/udp"    
+        env_file: 
+            - .env
+        volumes:
+            #Volume driver? cifs
+            - nas-jones/plexmain:/config
+            - nas-jones/temp:/transcode
+            - nas-jones/videos:/data/videos
+            - nas-jones/music:/data/music
+            - nas-jones/pictures:/data/pictures
+
+

@@ -1,0 +1,24 @@
+version: '2'
+services:
+
+    plex:
+        image: linuxserver/plex
+        ports:
+            - "1900:1900/udp"    
+            - "5353:5353/udp"    
+            - "32400:32400"    
+            - "32400:32400/udp"    
+            - "32469:32469"    
+            - "32469:32469/udp"    
+        # networks:
+        #     - host
+        env_file: 
+            - .env
+        volumes:
+            - D:/DevProjects/HomeIT/homeit-plex/config:/config
+            - D:/Media/Videos/tv/:/data/tv 
+            - D:/Media/Videos/Kids:/data/kids
+            - D:/Media/Videos/unprocessed:/data/unprocessed 
+            - D:/DevProjects/HomeIT/homeit-plex/transcode:/transcode
+
+
