@@ -1,6 +1,5 @@
 version: '2'
 services:
-
     plex-media:
         image: linuxserver/plex
         ports:
@@ -18,7 +17,8 @@ services:
             - plexvideo:/data/videos
             - plexmusic:/data/music
             - plexpictures:/data/pictures
- volumes:
+
+volumes:
      plexconfig:
         driver: cifs
         driver_opts: 
