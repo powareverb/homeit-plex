@@ -13,7 +13,7 @@ services:
             - .env
         volumes:
             - plexconfig:/config
-            - plextranscode:/transcode
+            #- plextranscode:/transcode
             - plexvideo:/data/videos
             - plexmusic:/data/music
             - plexpictures:/data/pictures
@@ -23,10 +23,10 @@ volumes:
         # driver: cifs
         # driver_opts: 
         #     share: "nas-jones/plexmain"
-    plextranscode:
-        driver: cifs
-        driver_opts: 
-            share: "nas-jones/temp"   
+    # plextranscode:
+    #     driver: cifs
+    #     driver_opts: 
+    #         share: "nas-jones/temp"   
     plexvideo:
         driver: cifs
         driver_opts: 
