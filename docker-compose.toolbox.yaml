@@ -1,19 +1,21 @@
-#docker-compose -f docker-compose.media.yaml up
 version: '2'
 services:
-    plex-media:
-        image: linuxserver/plex
-        ports:
-            - "1900:1900/udp"    
-            - "5353:5353/udp"    
-            - "32400:32400"    
-            - "32400:32400/udp"    
-            - "32469:32469"    
-            - "32469:32469/udp"    
+    toolbox:
+        image: gavinjonespf/docker-toolbox:latest  
         env_file: 
             - .env
+        command: powershell
+        env_file: 
+            - .env
+        environment:
+            - DOCKER_NODE=${HOSTNAME}
+        volumes:
+            - workspace:/media/workspace
+        stdin_open: true
+        tty: true
         volumes:
             - plexconfig:/config
+            - plexconfig2:/config2
             - plextranscode:/transcode
             - plexvideo:/data/videos
             - plexmusic:/data/music
@@ -22,6 +24,7 @@ services:
 
 volumes:
     plexconfig:
+    plexconfig2:
     plextranscode:
     plexvideo:
         driver: cifs
